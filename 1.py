@@ -15,18 +15,15 @@ def get_digit_sum (num):
     return sum
 
 num = input('Введите число. Для написания дробного числа можно использовать \'.\' или \',\': ')
-if not num.isdigit():
-    not_digits_count = 0
-    separators_count = 0
-    for i in num:
-        if i == ',' or i == '.':
-            separators_count += 1
-        if not i.isdigit():
-            not_digits_count += 1
-    if (separators_count == 0 or separators_count == 1) and separators_count == not_digits_count:
-             print(f'Сумма цифр в этом числе равна {get_digit_sum(num)}')
-    else:
-            print('Число введено некорректно!')
+not_digits_count = 0
+separators_count = 0
+for i in num:
+    if i == ',' or i == '.':
+        separators_count += 1
+    if not i.isdigit():
+        not_digits_count += 1
+if (separators_count == 0 or separators_count == 1) and separators_count == not_digits_count:
+        print(f'Сумма цифр в этом числе равна {get_digit_sum(num)}')
 else:
-    print(f'Сумма цифр в этом числе равна {get_digit_sum(num)}')
+        print('Число введено некорректно!')
 
